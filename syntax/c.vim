@@ -28,7 +28,6 @@ syn keyword	cRepeat		while for do
 
 syn keyword	cTodo		contained TODO FIXME XXX
 syn keyword     cNote           contained NOTE
-syn cluster cCommentGroup contains=cTodo,cNote,cBadContinuation
 
 " It's easy to accidentally add a space after a backslash that was intended
 " for line continuation.  Some compilers allow it, which makes it
@@ -36,7 +35,7 @@ syn cluster cCommentGroup contains=cTodo,cNote,cBadContinuation
 syn match	cBadContinuation contained "\\\s\+$"
 
 " cCommentGroup allows adding matches for special things in comments
-syn cluster	cCommentGroup	contains=cTodo,cBadContinuation
+syn cluster	cCommentGroup	contains=cTodo,cNotecBadContinuation
 
 " String and Character constants
 " Highlight special characters (those which have a backslash) differently
