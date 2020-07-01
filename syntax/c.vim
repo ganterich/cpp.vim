@@ -35,7 +35,7 @@ syn keyword     cNote           contained NOTE
 syn match	cBadContinuation contained "\\\s\+$"
 
 " cCommentGroup allows adding matches for special things in comments
-syn cluster	cCommentGroup	contains=cTodo,cNotecBadContinuation
+syn cluster	cCommentGroup	contains=cTodo,cNote,cBadContinuation
 
 " String and Character constants
 " Highlight special characters (those which have a backslash) differently
