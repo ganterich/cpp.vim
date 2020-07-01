@@ -1,7 +1,6 @@
 " Vim syntax file
-" Language:	C
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2019 Nov 29
+" Language: C
+" Original Author: Bram Moolenaar <Bram@vim.org>
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -22,12 +21,14 @@ if exists("c_autodoc")
 endif
 
 " A bunch of useful C keywords
-syn keyword	cStatement	goto break return continue asm
+syn keyword	cStatement	goto break return continue asm defer
 syn keyword	cLabel		case default
 syn keyword	cConditional	if else switch
 syn keyword	cRepeat		while for do
 
 syn keyword	cTodo		contained TODO FIXME XXX
+syn keyword     cNote           contained NOTE
+syn cluster cCommentGroup contains=cTodo,cNote,cBadContinuation
 
 " It's easy to accidentally add a space after a backslash that was intended
 " for line continuation.  Some compilers allow it, which makes it
@@ -501,6 +502,7 @@ hi def link cCppInElse2		cCppOutIf2
 hi def link cCppOutIf2		cCppOut
 hi def link cCppOut		Comment
 
+hi def link cNote Note
 
 
 " CUSTOM STUFF: Highlight functions
